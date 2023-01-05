@@ -1,0 +1,117 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-size: 2rem;
+    font-weight: 600;
+    background-color: #120537;
+    color: white;
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 2rem 0;
+    text-align: center;
+}
+section{
+    width: 650px;
+    height: 250px;
+    background-color: green;
+    float: left;
+    margin-left: 3rem;
+}
+section h2{
+    color: aqua;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+}
+section p{
+    color: gold;
+    font-size: 1.1rem;
+    text-align: left;
+    font-weight: 300;
+    padding: 0 10px;
+    line-height: 2;
+}
+
+aside{
+    width: 400px;
+    height: 250px;
+    background-color: red;
+    float: right;
+    margin-right: 2rem;
+}
+aside h2{
+    color: white;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 400;
+}
+aside p{
+    font-size: 1.1rem;
+    color: black;
+    font-weight: 300;
+    font-style: italic;
+    padding: 0 10px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.container{
+    background-color: black;
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    bottom: 20px;
+    margin-left: 5rem;
+}
+
+@media only screen and (max-width:420px){
+    html{
+        max-width: 420px;
+    }
+    body{
+        font-size: 1rem;
+        display: flex;
+        flex-flow: row wrap;
+      }
+    h1{
+        font-size: 1.5rem;
+        width: 100%;
+    }
+    section{
+        float: none;
+        width: 70%;
+        height: 20%;
+        justify-content: center;
+        margin-bottom: 20px;
+    }  
+    section p{
+        line-height: 1.2;
+        font-weight: 200;
+    }
+    aside{
+        float: none;
+        width: 70%;
+        height: 20%;
+        justify-content: center;
+        margin: 0;
+        margin-left: 3rem;
+    }
+    aside p{
+        line-height: 1.2;
+        font-weight: 200;
+    }
+    .container{
+        position: relative;
+        bottom: 5px;
+        margin-top: 1.3rem;
+        margin-left: .9rem;
+        width: 80%;
+    }
+}
