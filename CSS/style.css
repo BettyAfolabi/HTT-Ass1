@@ -1,7 +1,10 @@
+html{
+    box-sizing: border-box;
+}
 *,
 *::before,
 *::after{
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 body{
     margin: 0;
@@ -17,12 +20,14 @@ h1{
     padding: 2rem 0;
     text-align: center;
 }
+.wrapper{
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0 2rem;
+}
 section{
-    width: 650px;
-    height: 250px;
     background-color: green;
-    float: left;
-    margin-left: 3rem;
+    margin-right: 1.5rem;
 }
 section h2{
     color: aqua;
@@ -33,18 +38,14 @@ section h2{
 section p{
     color: gold;
     font-size: 1.1rem;
-    text-align: left;
     font-weight: 300;
     padding: 0 10px;
-    line-height: 2;
+    line-height: 1.7;
 }
 
 aside{
-    width: 400px;
-    height: 250px;
     background-color: red;
-    float: right;
-    margin-right: 2rem;
+    margin-left: 1.5rem;
 }
 aside h2{
     color: white;
@@ -59,36 +60,29 @@ aside p{
     font-style: italic;
     padding: 0 10px;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .container{
     background-color: black;
     width: 500px;
     height: 250px;
-    position: absolute;
-    margin-left: 5rem;
-    bottom: 0;
+    margin-top: 1rem;
+    border-radius: 5px;
 }
 
-@media only screen and (max-width:500px){
-    html{
-        max-width: 500px;
-    }
-    body{
-        font-size: 1rem;
-        display: flex;
-        flex-flow: row wrap;
-      }
+/*Tablet view*/
+@media (max-width:760px){
     h1{
         font-size: 1.5rem;
         width: 100%;
     }
+    .wrapper{
+        flex-flow: column wrap;
+    }
     section{
-        float: none;
-        width: 70%;
-        height: 20%;
         justify-content: center;
+        margin-right: 0;
         margin-bottom: 20px;
     }  
     section p{
@@ -96,22 +90,52 @@ aside p{
         font-weight: 200;
     }
     aside{
-        float: none;
-        width: 70%;
-        height: 20%;
         justify-content: center;
-        margin: 0;
-        margin-left: 3rem;
+        margin-left: 0;
+    }
+    aside p{
+        line-height: 1.2;
+        font-weight: 200;
+    }
+}
+
+/*Mobile view*/
+@media (max-width:460px){
+    body{
+        width: 100%;
+    }
+    h1{
+        font-size: 1.3rem;
+        width: 100%;
+    }
+    .wrapper{
+        flex-flow: column wrap;
+    }
+    section{
+        justify-content: center;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }  
+    section h2{
+        font-size: 1rem;
+    }
+    section p{
+        line-height: 1.2;
+        font-weight: 200;
+    }
+    aside{
+        justify-content: center;
+        margin-left: 0;
+    }
+    aside h2{
+        font-size: 1rem;
     }
     aside p{
         line-height: 1.2;
         font-weight: 200;
     }
     .container{
-        position: relative;
-        bottom: 5px;
-        margin-top: 1.3rem;
-        margin-left: .9rem;
-        width: 80%;
+        justify-content: center;
+        width: 90%;
     }
 }
